@@ -1,0 +1,32 @@
+image: ubuntu:latest
+
+stages:
+  - deploy
+
+variables:
+  SFTP_HOST: "ultratechpldev.sftp.wpengine.com"
+  SFTP_PORT: "2222"
+  SFTP_USER: "ultratechpldev-habashi"
+  SFTP_PASS: ".Jwc,)c#ZpkQ6"
+
+deploy:
+  stage: deploy
+  image: 
+    name: public.ecr.aws/n8t6e9l8/ubuntu-lftp:latest
+    entrypoint: [""]
+
+  script:
+    # Update and install lftp
+    # - apt-get update -qy
+    # - apt-get install -y lftp
+
+    # Deploy files to WPEngine
+    - echo "Deploying web app to WPEngine..."
+    - |
+      lftp -c "set sftp:auto-confirm yes; open -u $SFTP_USER,$SFTP_PASS -p $SFTP_PORT sftp://$SFTP_HOST <<EOF
+        mirror -R ./ /   
+        quit
+        EOF"
+  only:
+    - dev
+

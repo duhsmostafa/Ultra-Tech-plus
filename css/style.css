@@ -1,0 +1,788 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'Nebulica';
+    src: url('../NEBULICA/Nebulica-Regular.otf') format('woff2'), /* Modern browsers */
+         url('../NEBULICA/Nebulica-Black.otf') format('woff'),   /* Fallback for older browsers */
+         url('../NEBULICA/Nebulica-ExtraBold.otf') format('truetype'); /* Additional fallback */
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: black;
+    overflow-x: hidden;
+    font-family: 'Nebulica', sans-serif;
+}
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px; /* Change from left to right */
+    width: 200px;
+    height: 200vh;
+    background-color: #2474dc3d;
+    transition: 0.5s;
+    z-index: 20;
+    padding: 20px;
+}
+
+.side-menu.show {
+    right: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 20px 0;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.navbar .image {
+    width: 25%;
+    margin-top: -20px;
+}
+
+.navbar .image img {
+    width: 100%; 
+    margin-top: -20px;
+}
+
+.box {
+    display: none;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+
+.list {
+    list-style-type: none;
+    display: flex;
+    border: 2px solid rgba(192, 192, 192, 0.3);
+    border-radius: 30px;
+}
+
+.list li {
+    padding: 10px 0px;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.list li a::after {
+    content: " ";
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    background-color: rgba(192, 192, 192, 0.3);
+    right: 5px;
+    top: 21px;
+}
+
+.list li:nth-child(3) a::after {
+    content: none;
+}
+.btn {
+    padding: 10px 40px;
+    border-radius: 50px;
+    background-color: #1d74ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Nebulica';
+    src: url('../NEBULICA/Nebulica-Regular.otf') format('woff2');
+    font-weight:500;
+}
+.btn a {
+    color: #fff;
+}
+.bg-image {
+    background-image: url("../images/Ultratech-Plus-Contact-Us-Cover.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    justify-content: first baseline;
+    position: relative;
+}
+
+.bg-image .container {
+    z-index: 1;
+}
+.lets-connect-btn{
+    margin-top: 5px;
+    margin-right: 70px;
+}
+
+.contaner {
+    cursor: pointer;
+    position: absolute;
+    margin-top: -5%;
+    right: 5%;
+    z-index: 10;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:#fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.baar{
+    width: 25px;
+}
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-60deg);
+}
+  
+.change .bar2 {
+    opacity: 0;
+}
+  
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+.bg-image h1 {
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 27px;
+}
+.circle-img {
+    position: absolute;
+    width: 100%; 
+    top: 75%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 0; 
+    opacity: 30%;
+}
+
+.circle-img img {
+    width: 100%; 
+
+}
+.sapn-image{
+    width: 25%;
+    position: relative;
+    z-index: 10;
+    
+}
+.sapn-image img{
+    width: 100%;
+    position: absolute;
+    left: 30%;
+    z-index: 10;
+    margin-top: 175%;
+    animation: spin 50s linear infinite;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.emails{
+    position: relative;
+    width: 100%;
+}
+.inner{
+    position: relative;
+    right: 0%;
+    left: 30%;
+    margin: 2% 0px;
+}
+
+.marketing h2 {
+    color: #1d74ff;
+    padding-bottom: 10px;
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 400;
+}
+.marketing  .icon{
+    color: #1d74ff;
+}
+.marketing p , span{
+    color: #fff;
+    line-height: 20px;
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+.not-sure-btn {
+    z-index: 1000;
+    position: relative;
+    padding: 5px 10px;
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;      
+    align-items: center;          
+    border-radius: 40px;
+    border: #897bb2 2px solid;
+    background-color: transparent;
+    color: #fff;
+    font-size: 12px;
+    width: 30%;
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 100;
+    gap: 10px;                  
+}
+
+.not-sure-btn img {
+    width: 15%;                   
+    margin: 0;                    
+    display: block;             
+}
+
+.getintouch{
+    width: 100%;
+    margin-top: 50%;
+
+}
+.title{
+    color: #fff;
+    font-size: 27px;
+    line-height: 33.75px;
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 500;
+    
+}
+.form-title{
+    color: #fff;
+}
+
+.form-container {
+    width: 93%;
+    margin: 5% auto;
+    padding: 5%;
+    background-color: #1c1c1c;
+    border-radius: 20px;
+}
+
+.form-intro {
+    font-size: 1.4rem;
+    line-height:1.5;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #fff;
+    font-family: 'figtree', sans-serif;
+    font-weight: 400;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea:focus{
+    background-color: transparent;
+}
+.form-group input,
+.form-group textarea {
+    background-color: transparent;
+    color: silver;
+    border: none;
+    border-bottom: 1px solid ;
+    width: 48%;
+
+    font-size: 16px;
+    margin-bottom: 10%;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 250px;
+    resize: none;
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: 'Nebulica', sans-serif;
+    font-weight: 300;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #a3a3a3;
+}
+
+.submit-btn {
+    margin-top: 8%;
+    align-self: flex-end;
+    background-color: transparent;
+    color: white;
+    padding: 10px 40px;
+    border: 1px solid #897bb2;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+.submit-btn i {
+    font-size: 0.9rem;
+    color: #897bb2;
+}
+.logo{
+    width: 30%;
+}
+.logo img{
+    width: 100%;
+    margin-bottom: 10%;
+}
+
+.footer1{
+    background-color: #151515;
+    border-radius: 30px 30px 0px 0px;
+    padding: 3% 0;
+}
+.footer-tittle{
+    color: #fff;
+    line-height: 3;
+    width: 200%;
+    font-size: 10px;
+}
+.box2{
+    display: flex;
+    gap: 20px;
+}
+.placeholder{
+    color: #897bb2;
+}
+.box2 input{
+    border-radius: 50px;
+    border: 1px solid silver;
+    padding: 10px 10px;
+    background-color: #333333;
+}
+.box2 input::placeholder {
+    font-size: 10px; /* Adjust the size as needed */
+}
+.sub-btn {
+    padding: 0 10px;
+    border-radius: 50px;
+    background-color: #1d74ff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Nebulica', sans-serif;
+    display: flex;           /* Use flexbox to center items */
+    align-items: center;      /* Vertically center */
+    justify-content: center;  /* Horizontally center */
+    gap: 10px;                /* Space between text and icon */
+    position: relative;       /* For better control of positioning */
+}
+.sub-btn .fa-arrow-right {
+    transform: rotate(-45deg);  /* Rotate the icon */
+    font-size: 1.1rem;          /* Match icon size with text */
+}
+.footer{
+    color:#fff;
+        border-radius: 20px 20px 0px 0px;
+            background-color: #000;
+        padding: 3% 0;
+    }
+    .foooter{
+        background-color: #000;
+    }
+    .footer-inner{
+        display: flex;
+        font-size: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .back-image{
+        width: 10%;   
+          display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .back-image img{
+        width: 40%;
+    }
+    .social-icons{
+        display: flex;
+        gap: 10px;
+        width: 10%;
+    }
+    .ico{
+        width: 10px;
+        height: 10px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 3px #fff solid;
+        padding: 13px;
+    }
+    .fa-linkedin-in{
+        color: #fff;
+    }
+    .success-message {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      }
+    
+      .error-message {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      } 
+@media (min-width: 300px) and (max-width: 360px){
+    .bg-image{
+        height: 45vh;
+    }
+    .circle-img {
+        position: absolute;
+        width: 100%; 
+        top: 60%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        z-index: 0; 
+        opacity: 30%;
+    }
+    
+    .sapn-image{
+        width: 25%;
+        position: relative;
+        z-index: 10;
+        
+    }
+    .sapn-image img{
+        width: 100%;
+        position: absolute;
+        left: 30%;
+        z-index: 10;
+        margin-top: 80%;
+        animation: spin 50s linear infinite;
+    }
+    .marketing{
+        padding: 5px 0px;
+    }
+    .marketing h2{
+        font-size: 18px;
+        padding-bottom: 5px;
+        line-height: 20px;
+    }
+    .marketing p , span{
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .form-intro {
+        font-size: 16px;
+    }
+    input::placeholder,
+textarea::placeholder {
+    font-size: 20px;
+}
+.logo{
+    width: 40%;
+}
+.logo img{
+    width: 100%;
+    margin-bottom: 10%;
+}
+.box2 input{
+    border-radius: 50px;
+    padding: 15px 10px;
+    font-size: 10px;
+
+}
+.box2 input::placeholder {
+    font-size: 10px; /* Adjust the size as needed */
+}
+.sub-btn {
+    padding: 0 20px;
+    font-size: 12px;
+
+}
+.sub-btn .fa-arrow-right {
+    transform: rotate(-45deg);  
+    font-size: 20px;         
+}
+.footer{
+    color:#fff;
+    font-size: 10px;
+    }
+    
+}
+
+@media (min-width: 365px) and (max-width: 499px){
+    .sapn-image img{
+        margin-top: 170%;
+    }
+
+}
+@media (min-width: 500px) { 
+.list li {
+    padding:10px 5px ;
+}
+
+.list li a {
+    padding: 10px;
+}
+
+.list li a::after {
+    right: 0px;
+    top: 12px;
+}
+
+.btn {
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: #1d74ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+    .bg-image{
+        height: 60vh;
+    }
+    .bg-image h1{
+        font-family: 'Nebulica', sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        line-height: 53px;
+    }
+    .circle-img {
+        width: 75%; 
+        top: 73%; 
+        left: 65%; 
+    }
+    .sapn-image{
+        width: 40%;
+    }
+    .sapn-image img{
+        width: 50%;
+        margin-left: 50%;
+        margin-top: 70%;
+    }
+    .inner{
+        left: 50%;
+        margin: 5% 0px;
+    }
+    .marketing h2 {
+        padding-bottom: 10px;
+        font-size: 18px;
+        line-height: 22.5px;
+        font-weight: 700;
+    }
+    .marketing p , span{
+        line-height: 25px;
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .not-sure-btn{
+        font-size: 14px;
+    }
+    .not-sure-btn img {
+        width: 10%;                   
+        margin: 0;                    
+        display: block;             
+    }
+    .title{
+        color: #fff;
+        font-size: 43px;
+        line-height:53.75px;
+    }
+    .form-intro {
+        font-size: 18px;
+    }
+}
+@media (min-width: 1024px) { 
+    .bg-image{
+        height: 100vh;
+    }
+    .box{
+        display: flex;
+        gap: 20px;
+    
+    }
+    .contaner{
+        display: none;
+    }
+    .list li a {
+        padding: 20px 25px;
+    }
+    .btn {
+        padding: 10px 40px;
+        font-size: 18px;
+    }
+
+    
+    .navbar .image {
+        width: 30%;
+        margin-top: 20px;
+    }
+    
+    .navbar .image img {
+        width: 60%; 
+    }
+    .bg-image h1 {
+        font-size: 5em;
+        line-height: 1.2;
+    }
+    .list li a::after {
+        right: 0px;
+        top: 21px;
+    }
+    .circle-img {
+        width: 100%; 
+        top: 55%; 
+        left: 80%; 
+        z-index: 0; 
+        opacity: 20%;
+    }
+    .circle-img img {
+    width: 70%; 
+}
+.sapn-image{
+    width: 40%;
+    position: relative;
+    z-index: 10;
+    
+}
+.getintouch{
+    width: 100%;
+    margin-top: 20%;
+
+}
+.sapn-image img{
+    width: 30%;
+    position: absolute;
+    left: 45%;
+    z-index: 10;
+    margin-top: 30%;
+    animation: spin 50s linear infinite;
+}
+.marketing h2 {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 45px;
+}
+.marketing p , span{
+    font-weight: 100;
+    line-height: 45px;
+    font-weight: 100;
+    font-size: 28px;
+}
+.not-sure-btn {
+    font-size: 24px;
+    width: 30%;
+line-height: 30px;
+    font-weight: 500;
+                
+}
+
+.not-sure-btn img {
+    width: 10%;                   
+    margin: 0;                    
+    display: block;             
+}
+.back-image{
+    width: 5%;     
+}
+.not-sure-btn{
+    width: 20%;
+}
+.form-group input ,
+.form-group textarea{
+    font-size: 30px;
+}
+.footer-tittle{
+    font-size: 20px;
+}
+.box2 input{
+    padding: 15px;
+    padding-right: 40px;
+}
+.box2 input::placeholder {
+    font-size: 12px; /* Adjust the size as needed */
+}
+.sub-btn{
+    padding: 15px 40px;
+}
+.footer-inner{
+    font-size: 15px;
+}
+/* Remove the white background for autofilled fields */
+input:-webkit-autofill, 
+textarea:-webkit-autofill {
+    background-color: transparent !important;
+    color: silver !important; /* Ensure text color matches your design */
+    border-bottom: 1px solid #a3a3a3; /* Optional: Match your custom border */
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; /* Removes the autofill highlight */
+    transition: background-color 5000s ease-in-out 0s;
+}
+}

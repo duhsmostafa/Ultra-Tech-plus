@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="UltraTech Plus connects people and simplifies financial management through seamless technology. Explore now!">
+    <meta name="keywords" content="UltraTech Plus, financial management, fintech solutions, technology, finance simplicity">
+    <meta name="author" content="UltraTech Plus">
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="UltraTech Plus - Simplify Financial Management">
+    <meta property="og:description" content="Connecting people and simplifying financial management through seamless technology.">
+    <meta property="og:url" content="https://ultratech-plus.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Title -->
+    <title>UltraTech Plus - Simplify Financial Management</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Ultratech-Plus-Fav-Icon.png" type="image/png">
+
+    <!-- Preload Resources -->
+    <link rel="preload" href="css/home-style.css" as="style">
+    <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/home-style.css">
+    <noscript><link rel="stylesheet" href="css/home-style.css"></noscript>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.13/lottie.min.js" defer></script>
+</head>
+
+<body>
+    <div class="containers">
+        <div class="content">
+            <div class="container">
+                <div class="nav">
+                    <div class="contaner" onclick="toggleMenu(this)" aria-label="Toggle Navigation Menu">
+                        <div class="bar1 baar"></div>
+                        <div class="bar3"></div>
+                    </div>
+                    <div class="button">
+                        <button class="btn2" onclick="location.href='contactUs.html#contact-section'" aria-label="Navigate to Contact Section">Let's Connect</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="text">
+                    <p>
+                        We connect people simplify financial management.
+                    </p>
+                </div>
+                <div class="button2">
+                    <button class="btn" aria-label="Learn more about UltraTech Plus"><a href="abutUs.html">Peek Inside</a></button>
+                    <img src="https://utp24stg.wpenginepowered.com/wp-content/uploads/2024/08/Ultratech-Plus-Fav-Icon.png" alt="Ultratech Logo">
+                </div>
+                <div class="logo-image-down">
+                    <img src="images/Ultratech-Plus-Logo-Wide-EN-White.png" alt="Ultratech Plus Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" aria-hidden="true"></div>
+
+    <!-- Side Menu -->
+    <div class="side-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="abutUs.html">Company</a></li>
+            <li><a href="careers.html">Careers</a></li>
+        </ul>
+    </div>
+
+    <div id="logoAnimation" aria-hidden="true"></div>
+    <div id="animation" aria-hidden="true"></div>
+    <script>
+function toggleMenu(x) {
+    x.classList.toggle("change");
+    var menu = document.querySelector('.side-menu');
+    var overlay = document.querySelector('.overlay');
+    menu.classList.toggle('show');
+    overlay.classList.toggle('show');
+}
+
+document.addEventListener('click', function(event) {
+    var menu = document.querySelector('.side-menu');
+    var menuButton = document.querySelector('.contaner');
+    
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        menu.classList.remove('show');
+        document.querySelector('.overlay').classList.remove('show');
+        document.querySelector('.contaner').classList.remove('change');
+    }
+});
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function playLogoAnimation() {
+                var logoAnimation = lottie.loadAnimation({
+                    container: document.getElementById('logoAnimation'),
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path: "logoAnimation.json"
+                });
+
+                setTimeout(function () {
+                    document.getElementById('logoAnimation').style.display = 'none';
+                    const logoImage = document.querySelector('.logo-image-down');
+                    logoImage.style.display = 'block';
+                    logoImage.classList.add('fade-in');
+                }, 5000);
+            }
+
+            function loadSecondAnimation() {
+                lottie.loadAnimation({
+                    container: document.getElementById('animation'),
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path: "SecoundAnimation.json"
+                });
+            }
+
+            function showContent() {
+                var container = document.querySelector('.container');
+                container.classList.remove('hidden');
+                container.classList.add('fade-in');
+            }
+
+            if (!sessionStorage.getItem('logoAnimationPlayed')) {
+                playLogoAnimation();
+                sessionStorage.setItem('logoAnimationPlayed', 'true');
+                setTimeout(loadSecondAnimation, 5000);
+                setTimeout(showContent, 4800);
+            } else if (performance.navigation.type === 1) {
+                playLogoAnimation();
+                setTimeout(loadSecondAnimation, 0);
+                setTimeout(showContent, 4800);
+            } else {
+                document.getElementById('logoAnimation').style.display = 'none';
+                loadSecondAnimation();
+                showContent();
+            }
+        });
+    </script>
+<script>
+    if (window.location.pathname === "/people/") {
+      window.location.replace("https://ultratech-plus.com/");
+    }
+  </script>  
+</body>
+
+</html>
